@@ -1,10 +1,13 @@
-
 {% extends "entries/base.html" %}
+
+{% block title %}Home{% endblock %}
+
 {% block content %}
-
-      <div class="col-md-8">
-      <h4>You have Successfully logged out. <a href="{% url 'login' %}">Log back in</a></h4>
-
-      </div>
-
-      {% endblock content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}

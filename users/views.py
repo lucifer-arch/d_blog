@@ -11,7 +11,7 @@ def register(request):
             password = request.POST['password']
             user = authenticate(request, username=username, password=password)
             login(request,user)
-            return redirect('blog-home')
+            return redirect('')
     else:
                 form = RegistrationForm()
                 context = {'form':form}
