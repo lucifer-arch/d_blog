@@ -31,10 +31,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Post Now</a>
+            <a class="nav-link" href="{% url 'create_entry' %}">Post Now</a>
           </li>
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">Log Out</a>
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
           </li>
         </ul>
       </div>
@@ -57,10 +58,10 @@
           <div class="card-body">
             <ul class="list-unstyled mb-0">
                 <li>
-                    <p> <strong>Username:</strong> My Username </p>
+                    <p> <strong>Username:</strong> {{user.username}} </p>
                 </li>
                 <li>
-                    <p> <strong>Email:</strong> My Password</p>
+                    <p> <strong>Email:</strong> {{user.email}} </p>
                 </li>
             </ul>
           </div>
