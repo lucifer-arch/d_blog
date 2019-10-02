@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import RegistrationForm
 def register(request):
+    global context
     if request.method =='POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
